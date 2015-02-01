@@ -5,10 +5,10 @@ var Vector2 = require('vector2');
 var parseFeed = function(data, quantity) {
   var items = [];
   for(var i = 0; i < quantity; i++) {
-    // Always upper case the description string
+    // Get contact names
     var title = data.list[i].contacts[0].name;
 
-    // Get date/time substring
+    // Get phone numbers
     var time = data.list[i].number;
     
     // testing
@@ -45,7 +45,7 @@ var text = new UI.Text({
 splashWindow.add(text);
 splashWindow.show();
 
-// Make request to openweathermap.org
+// Make request to JSON file online
 ajax(
   {
     url:'https://raw.githubusercontent.com/santos22/PebbleFace/master/Favorites.json',
